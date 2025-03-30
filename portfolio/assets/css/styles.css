@@ -251,68 +251,91 @@ img {
 }
 
 /* ===== SKILLS =====*/
-
 .skills__container {
-  row-gap: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Space between text and image */
+  align-items: flex-start; /* Align items to the top */
+  padding: 50px; /* Add padding for spacing */
 }
+
+.skills__text-container {
+  width: 60%; /* Adjust width as needed */
+}
+
+.skills__img-container {
+  width: 35%; /* Adjust width as needed */
+  text-align: right; /* Align image to the right */
+}
+
+.skills__img {
+  width: 100%; /* Make image responsive */
+  border-radius: 0.5rem; /* Optional: add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+
 .skills__subtitle {
-  margin-bottom: var(--mb-2);
+  font-size: 24px; /* Adjust font size */
+  margin-bottom: 10px;
 }
+
 .skills__text {
-  margin-bottom: var(--mb-4);
+  font-size: 16px; /* Adjust font size for readability */
+  margin-bottom: 20px; /* Add margin for spacing */
 }
+
 .skills__data {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-weight: var(--font-semi);
-  padding: 0.5rem 1rem;
-  margin-bottom: var(--mb-4);
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  align-items: center; /* Center the icon and text vertically */
+  margin-bottom: 15px; /* Add spacing between skills */
 }
-.skills__icon {
-  font-size: 2rem;
-  margin-right: var(--mb-2);
-  color: var(--first-color);
-}
+
 .skills__names {
   display: flex;
-  align-items: center;
+  align-items: center; /* Center the icon and text vertically */
 }
+
+.skills__icon {
+  font-size: 2rem; /* Adjust icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
 .skills__bar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  height: 0.25rem;
-  border-radius: 0.5rem;
-  z-index: var(--z-back);
+  flex: 1; /* Allow the bar to grow */
+  height: 8px; /* Set height for the skill bar */
+  background-color: hsl(36, 89%, 60%); /* Background color for the bar */
+  border-radius: 5px; /* Rounded corners for the bar */
+  margin: 0 10px; /* Space between bar and percentage */
 }
-.skills__html {
-  width: 95%;
+
+.skills__percentage {
+  font-weight: bold; /* Make percentage bold */
 }
-.skills__css {
-  width: 85%;
-}
-.skills__js {
-  width: 65%;
-}
-.skills__ux {
-  width: 85%;
-}
-.skills__img {
-  border-radius: 0.5rem;
-  width: 50%; /* Adjust the percentage as needed */
-  height: auto;
- 
+
+@media (max-width: 768px) {
+      .skills__container {
+          flex-direction: column; /* Stack elements vertically on smaller screens */
+     }
+     .skills__text-container {
+         width: 100%; /* Full width on smaller screens */
+         margin-bottom: 20px; /* Add margin for spacing */
+     }
+     .skills__img-container {
+          width: 100%; /* Full width on smaller screens */
+          text-align: center; /* Center image on smaller screens */
+      }
+  }
   
-}
-/* .skills__img-container {
-  text-align: right;
-} */
+  @media (max-width: 480px) {
+     .skills__text {
+          font-size: 14px; /* Adjust font size for smaller screens */
+      }
+   .skills__icon {
+         font-size: 1.5rem; /* Adjust icon size for smaller screens */
+      }
+      .skills__bar {
+          height: 6px; /* Adjust bar height for smaller screens */
+      }
+  }
 
 
 /* ===== WORK =====*/
